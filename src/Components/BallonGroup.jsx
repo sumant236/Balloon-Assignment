@@ -29,7 +29,7 @@ export const BallonGroup = () => {
     }, [])
     
     return (
-        <div style= {{display: "flex", justifyContent: "space-around"}}>
+        <div style= {{display: "flex", justifyContent: "space-around", marginTop: "50px"}}>
             <div style={{border: "1px solid black", width: "40%", height: "400px", display: "flex", flexWrap: "wrap"}}>
                 {array.length!==0?array.map((item)=><button style={{backgroundColor: "#" + item.randomColor, height: "100px", width: "100px", border: "1px solid black", borderRadius: "50px"}}></button>):array}
             </div>
