@@ -9,12 +9,6 @@ export const BallonGroup = () => {
     
     // using useState hook
     const [val, setVal] = useState("");
-    
-    // handling input value
-    const handleChange = (e) => {
-        setVal(e.target.value);
-        console.log(val);
-    }
 
     // handling what to do when we shoot
     const handleClick = () => {
@@ -22,6 +16,7 @@ export const BallonGroup = () => {
         color.splice(Number(val-1),1);
         console.log(array, color)
         generatedColors();
+        setVal("");
     }
 
     useEffect(()=>{
@@ -40,7 +35,7 @@ export const BallonGroup = () => {
                 </div>)}
             </div>
             <div>
-                <input type="number" value={val} placeholder='Enter any number' onChange={handleChange}/>
+                <input type="number" value={val} placeholder='Enter any number' onChange={(e)=>setVal(e.target.value)}/>
                 <button onClick={handleClick}>Shoot</button>
             </div>
         </div>
